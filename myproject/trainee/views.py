@@ -9,3 +9,11 @@ def update(request):
 
 def delete(request):
     return HttpResponse("<h1>Delete Page</h1>")
+def alltrainees(request):
+    trainees = [
+        [1, "Ahmed"],
+        [2, "Mona"],
+        [3, "Sara"]
+    ]
+
+    return render(request, 'trainees.html', {'trainees': trainees})

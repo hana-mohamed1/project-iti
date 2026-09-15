@@ -22,15 +22,18 @@ from trainee import views as trainee_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    path('myuser/', myuser_views.allusers),
     path('myuser/login/', myuser_views.login),
     path('myuser/signup/', myuser_views.signup),
     path('myuser/logout/', myuser_views.logout),
+
+    path('tracks/', tracks_views.alltracks),
 
     path('tracks/insert/', tracks_views.insert),
     path('tracks/update/', tracks_views.update),
     path('tracks/delete/', tracks_views.delete),
 
+    path('trainee/', trainee_views.alltrainees),
     path('trainee/insert/', trainee_views.insert),
     path('trainee/update/', trainee_views.update),
     path('trainee/delete/', trainee_views.delete),

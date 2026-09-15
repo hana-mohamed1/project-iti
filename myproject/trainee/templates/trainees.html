@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Trainees
+{% endblock %}
+
+{% block content %}
+
+<h1>Trainees</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+
+    {% for trainee in trainees %}
+    <tr>
+        <td>{{ trainee.0 }}</td>
+        <td>{{ trainee.1 }}</td>
+        <td>
+            <a href="#">Update</a>
+            <a href="#">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

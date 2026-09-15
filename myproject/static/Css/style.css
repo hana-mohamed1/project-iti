@@ -1,0 +1,22 @@
+body {
+    background-color: #ffd6e7;
+}
+
+table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: white;
+    font-size: 20px;
+}
+
+th,
+td {
+    border: 2px solid black;
+    padding: 18px;
+    text-align: center;
+}
+
+th {
+    font-size: 22px;
+}
