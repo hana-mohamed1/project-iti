@@ -11,13 +11,22 @@ Users
 <table>
     <tr>
         <th>ID</th>
-        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Action</th>
     </tr>
 
     {% for user in users %}
     <tr>
-        <td>{{ user.0 }}</td>
-        <td>{{ user.1 }}</td>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.password }}</td>
+        <td>
+            <a href="/myuser/update/{{ user.id }}/">Update</a>
+            <a href="/myuser/delete/{{ user.id }}/">Delete</a>
+        </td>
     </tr>
     {% endfor %}
 </table>

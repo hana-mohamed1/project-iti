@@ -26,7 +26,9 @@ urlpatterns = [
     path('myuser/login/', myuser_views.login),
     path('myuser/signup/', myuser_views.signup),
     path('myuser/logout/', myuser_views.logout),
-
+    path('myuser/insert/', myuser_views.insert),
+    path('myuser/update/<int:id>/', myuser_views.update),
+    path('myuser/delete/<int:id>/', myuser_views.delete),
     path('tracks/', tracks_views.alltracks),
 
     path('tracks/insert/', tracks_views.insert),
