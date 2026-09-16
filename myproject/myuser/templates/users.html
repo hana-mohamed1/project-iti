@@ -12,17 +12,12 @@ Users
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Action</th>
     </tr>
 
     {% for user in users %}
     <tr>
         <td>{{ user.0 }}</td>
         <td>{{ user.1 }}</td>
-        <td>
-            <a href="#">Update</a>
-            <a href="#">Delete</a>
-        </td>
     </tr>
     {% endfor %}
 </table>

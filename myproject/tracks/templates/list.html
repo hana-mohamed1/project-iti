@@ -17,11 +17,11 @@ Tracks
 
     {% for track in tracks %}
     <tr>
-        <td>{{ track.0 }}</td>
-        <td>{{ track.1 }}</td>
+        <td>{{ track.id }}</td>
+        <td>{{ track.name }}</td>
         <td>
-            <a href="#">Update</a>
-            <a href="#">Delete</a>
+            <a href="/tracks/update/{{ track.id }}/">Update</a>
+            <a href="/tracks/delete/{{ track.id }}/">Delete</a>
         </td>
     </tr>
     {% endfor %}

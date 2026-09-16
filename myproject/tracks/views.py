@@ -1,18 +1,28 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from .models import Track
 # Create your views here.
 def alltracks(request):
-    tracks = [
-        [1, "Odoo"],
-        [2, "Python"],
-        [3, "Django"]
-    ]
+    tracks = Track.objects.all()
     return render(request, 'list.html', context={'tracks': tracks})
 def insert(request):
-    return HttpResponse("<h1>Insert Page</h1>")
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        Track.objects.create(name=name)
+        return redirect('/tracks/')
 
-def update(request):
-    return HttpResponse("<h1>Update Page</h1>")
+    return render(request, 'insert.html')
+def update(request, id):
+    track = Track.objects.get(id=id)
 
-def delete(request):
-    return HttpResponse("<h1>Delete Page</h1>")
+    if request.method == 'POST':
+        track.name = request.POST.get('name')
+        track.save()
+        return redirect('/tracks/')
+
+    return render(request, 'update.html', {'track': track})
+
+def delete(request, id):
+    track = Track.objects.get(id=id)
+    track.delete()
+    return redirect('/tracks/')

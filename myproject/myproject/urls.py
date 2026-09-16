@@ -30,11 +30,10 @@ urlpatterns = [
     path('tracks/', tracks_views.alltracks),
 
     path('tracks/insert/', tracks_views.insert),
-    path('tracks/update/', tracks_views.update),
-    path('tracks/delete/', tracks_views.delete),
-
+    path('tracks/update/<int:id>/', tracks_views.update),  
+    path('tracks/delete/<int:id>/', tracks_views.delete),
     path('trainee/', trainee_views.alltrainees),
     path('trainee/insert/', trainee_views.insert),
-    path('trainee/update/', trainee_views.update),
-    path('trainee/delete/', trainee_views.delete),
+    path('trainee/update/<int:id>/', trainee_views.update),
+    path('trainee/delete/<int:id>/', trainee_views.delete),
 ]

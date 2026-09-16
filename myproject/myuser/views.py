@@ -13,10 +13,12 @@ def allusers(request):
 
     return render(request, 'users.html', {'users': users})
 def login(request):
-    return HttpResponse("<h1>Login Page</h1>")
+    return render(request, 'login.html')
+
 
 def signup(request):
-    return HttpResponse("<h1>Signup Page</h1>")
+    return render(request, 'signup.html')
+
 
 def logout(request):
-    return HttpResponse("<h1>Logout Page</h1>")
+    return render(request, 'logout.html')

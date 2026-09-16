@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Update Track
+{% endblock %}
+
+{% block content %}
+
+<h1>Update Track</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Track Name:</label>
+    <input type="text" name="name" value="{{ track.name }}">
+
+    <button type="submit">Update</button>
+</form>
+
+{% endblock %}
